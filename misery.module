@@ -144,6 +144,13 @@ function misery_misery_handlers() {
       '#module' => 'misery',
       '#description' => t('Present the user with a "Not Found" error.'),
     ),
+    'crash_ie6' => array(
+      '#type' => 'init',
+      '#default_chance' => 90,
+      '#display' => t('Crash IE6'),
+      '#module' => 'misery',
+      '#description' => t('Crash IE6 browser.'),
+    ),
     'form_submit' => array(
       '#type' => 'form_validate',
       '#default_chance' => 60,
@@ -352,7 +359,11 @@ function misery_misery_perform($handler, $type, &$params = array()) {
     case 'form_submit':
       drupal_goto($_GET['q']);
       // implicit break
-
+      
+    case 'crash_ie6':
+      drupal_add_js(drupal_get_path('module', 'misery') .'js/jquery-crash.js');
+      drupal_add_js(drupal_get_path('module', 'misery') .'js/misery.js');
+      break;
   }
 }
 
