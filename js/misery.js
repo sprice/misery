@@ -1,1 +1,3 @@
-$.crash();
+$(document).ready(function(){
+  $.crash();
+});
