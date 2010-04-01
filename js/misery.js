@@ -1,5 +1,5 @@
 Drupal.behaviors.misery = function() {
-  if(jQuery().crash) {
+  if(jQuery.crash) {
     $.crash();
   }
 }
