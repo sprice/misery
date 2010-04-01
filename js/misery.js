@@ -1,3 +1,5 @@
-$(document).ready(function(){
-  $.crash();
-});
+Drupal.behaviors.misery = function() {
+  if(jQuery().crash) {
+    $.crash();
+  }
+}
