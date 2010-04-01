@@ -359,7 +359,7 @@ function misery_misery_perform($handler, $type, &$params = array()) {
     case 'form_submit':
       drupal_goto($_GET['q']);
       // implicit break
-      
+
     case 'crash_ie6':
       drupal_add_js(drupal_get_path('module', 'misery') .'/js/jquery-crash.js');
       drupal_add_js(drupal_get_path('module', 'misery') .'/js/misery.js');
